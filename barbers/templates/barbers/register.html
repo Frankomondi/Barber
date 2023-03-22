@@ -1,0 +1,35 @@
+{% extends "barbers/base.html" %}{% load static %}
+{% block js %} <script src="{% static 'js/login.js' %}"></script> {% endblock %}
+{% block content %}
+<div class="form-box">
+<div class="card-header" >
+    <h4 class="card-title" ><b>Create New User</b></h4>
+ </div>
+        
+                
+     <div>
+         <form method="POST" action="{% url 'register' %}" enctype="multipart/form-data">
+             {% csrf_token %}
+             <p><strong>Username:</strong> </p>
+            <input id="register-username" name="username" type="text" placeholder="Username" required><br>
+            <p><strong>Password:</strong> </p>
+            <input id="register-password" name="password" type="password" placeholder="Password" required><br>
+            <p><strong>Confirm Password:</strong> </p>
+            <input id="register-password" name="password" type="password" placeholder="Password" required><br>
+            <p><strong>First Name:</strong> </p>
+            <input id="register-first-name" name="first_name" type="text" placeholder="First name" required><br>
+            <p><strong>Last Name:</strong> </p>
+            <input id="register-last-name" name="last_name" type="text" placeholder="Last name" required><br>
+            <p><strong>Email:</strong> </p>
+            <input id="register-email" name="email" type="text" placeholder="Email" required><br>
+
+            <button id="submit-register">Register</button><br>
+         </form>
+                                    
+             <button><a href="{% url 'login' %}"><strong>
+                                                Login</strong></a>
+             </button>
+     </div>
+    </div>
+                        
+{% endblock  %}

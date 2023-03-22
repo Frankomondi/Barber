@@ -1,0 +1,31 @@
+{% extends "barbers/base.html" %}
+{% load static %}
+
+<!-- Title -->
+
+{% block title %} weBarbershop {% endblock %}
+
+<!-- JavaScript -->
+{% block js %} <script src="{% static 'js/login.js' %}"></script> {% endblock %}
+<!-- Body -->
+{% block content %}
+
+     <div id="home" >
+       <div class="landing-text">
+         <div id="landing-text">Welcome to WeBarbershop!</div>
+        
+         <a  href="{% url 'login' %}" class="btn btn-info btn-lg" role="button">Make an Appointment Today!</a>
+        
+       </div>
+     </div>
+
+    
+           </div>
+           </div>
+</div>
+<!-- Fixed Img -->
+<div id="fixedImg">
+</div>
+
+
+{% endblock %}

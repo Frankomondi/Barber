@@ -1,0 +1,130 @@
+{% extends "barbers/base.html" %}
+{% load static %}
+
+<!-- Title -->
+
+{% block title %} weBarbershop {% endblock %}
+
+<!-- JavaScript -->
+{% block js %} <script src="{% static 'js/login.js' %}"></script> {% endblock %}
+<!-- Body -->
+<div id="csrf">{% csrf_token %}</div>
+<div class="collapse" id="navbarHeader">
+ <div class="container-fluid text-center">
+   <div class="row no-gutters">
+<!-- Login -->
+ <div id="nav-login" class="col-md-5 py-4">
+   <h5>Login</h5>
+   <form>
+     <input id="username" name="username" type="text" placeholder="Username" required><br>
+     <input id="password" name="password" type="password" placeholder="Password" required><br>
+     <button id="submit-login">Login</button>
+   </form>
+   <div class="error-login"></div>
+ </div>
+
+ <!-- Register -->
+ <div id="nav-register" class="col-md-5 ml-md-auto py-4">
+   <h5>New Account</h5>
+   <form>
+     <input id="register-username" name="username" type="text" placeholder="Username" required><br>
+     <input id="register-password" name="password" type="password" placeholder="Password" required><br>
+     <input id="register-first-name" name="first_name" type="text" placeholder="First name" required><br>
+     <input id="register-last-name" name="last_name" type="text" placeholder="Last name" required><br>
+     <input id="register-email" name="email" type="text" placeholder="Email" required><br>
+     <button id="submit-register">Register</button>
+   </form>
+   <div class="error-register"></div>
+ </div>
+ </div>
+ </div>
+ </div>
+{% block body %}
+
+ <!-- Navbar -->
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark border" position:fixed;>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo03" aria-controls="navbarTogglerDemo03" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <a class="navbar-brand" href="/"><span>Longwood Barbershop</span></a>
+    <span class="navbar-brand">{{ client.fname }} {{client.date}} {{ client.time }}</span>
+    <div class="collapse navbar-collapse" id="navbarTogglerDemo03">
+       <ul class="navbar-nav ml-auto mt-2 mt-lg-0">
+
+                 <li class="nav-link text-light" id="welcome"></li>
+                 <li class="nav-item" id="team"><a href="#ourTeam" class="nav-link">Team</a></li>
+                 <li class="nav-item" id="our-services"><a href="#ourServices" class="nav-link">Our Services</a></li>
+                 <li class="nav-item" id="home-page"><a class="nav-link">Home</a></li>
+             </ul>
+         </div>
+
+     </nav>
+     <div id="home">
+       <div class="landing-text">
+         <div id="landing-text">Welcome to Longwood Barbershop!</div>
+         <a  href="{% url 'appointment' %}" class="btn btn-info btn-lg" role="button">Make an Appointment Today!</a>
+       </div>
+     </div>
+
+     <!-- Our Services -->
+     <div class="divSection">
+       <div class="container-fluid">
+         <div class="row">
+           <div class="col-sm-6" id="ourServices">
+             <img src="{% static 'img/ourServices.jpg' %}" alt="" class="img-fluid">
+           </div>
+           <div class="col-sm-6">
+             <h2 class="text-center">Services</h2>
+             <p>A hair cut is just a hair cut, right? Wrong! At Longwood, a hair cut is ritual, a nostalgic experience harkening back to a simpler day when men gathered at the corner barbershop to discuss everything from business, to sports, to current events. Longwood’s barbers provide both traditional, short hair cuts, as well as contemporary and trendy styles.</p>
+             <ul>
+               <li>Quality Mens Haircuts and Hairstyles</li>
+               <li>Discount for Boys (8th grade and below)</li>
+               <li>Fire, Military, Police and Senior Discounts</li>
+               <li>Hot Lather Straight-Razor Shaves</li>
+               <li>Mens Facials and Facial Massages</li>
+               <li>Beard and Moustache Trims</li>
+             </ul>
+           </div>
+           </div>
+           </div>
+</div>
+<!-- Fixed Img -->
+<div id="fixedImg">
+</div>
+<!-- Team -->
+<div class="divSection">
+<div class="container-fluid">
+  <div class="row">
+    <div class="col-sm-6" id="ourTeam">
+      <img src="{% static 'img/team.jpg' %}" alt="" class="img-fluid">
+    </div>
+    <div class="col-sm-6">
+      <h2 class="text-center">Our Team</h2>
+      <ul>
+        <li>Kadihm M <p>"Husband, father, fantastic barber, & all around good dude."</p> </li>
+        <li>Azad S  <p>"I like to do any kind of cut anyone throws at me because I see that it’s a new adventure and the best way to build up my skills and experience in barbering."</p></li>
+        <li>George S  <p>"I get it. You want to keep your hair long, but you don’t want to look shaggy. Let me give you the clean cut look,"</p>
+       </li>
+      </ul>
+    </div>
+  </div>
+  </div>
+</div>
+<footer class="footer">
+    <div class="container-fluid">
+      <div class="row">
+        <div class="col-sm-6">
+              <p>LongWood Barbershop</p>
+              <p>342 Longwood Ave,</p>
+              <p>Boston, MA 02115</p>
+            <p>Phone: (617) 731-7931</p>
+            </div>
+
+    <div class="col-sm-6">
+      <p class="footer-company-name">© 2020 Salim Yadallah</p>
+    </div>
+
+</div>
+</div>
+</footer>
+{% endblock %}

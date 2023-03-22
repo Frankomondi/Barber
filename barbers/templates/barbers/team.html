@@ -1,0 +1,32 @@
+{% extends "barbers/base.html" %}
+{% load static %}
+
+<!-- Title -->
+
+{% block title %} weBarbershop {% endblock %}
+
+<!-- JavaScript -->
+{% block js %} <script src="{% static 'js/login.js' %}"></script> {% endblock %}
+<!-- Body -->
+{% block content%}
+
+<!-- Team -->
+<div class="divSection">
+
+    <div class="container-fluid">
+      <div class="row">
+        <div class="col-sm-6" id="ourTeam">
+        </div>
+        <div class="col-sm-6">
+          <h2 class="text-center">Our Team</h2>
+    
+            <img src="{% static 'img/Kad.jpg' %}" alt="" />
+            <strong>james </strong><p>"Husband, father, USMC 0311, fantastic barber, & all around good dude."</p>
+            <img src="{% static 'img/Mo.jpg' %}" alt="" />
+            <strong>Savyo </strong>  <p>"I like to do any kind of cut anyone throws at me because I see that it’s a new adventure and the best way to build up my skills and experience in barbering."</p>
+            </div>
+        </div>
+      </div>
+      </div>
+    </div>
+    {% endblock  %}

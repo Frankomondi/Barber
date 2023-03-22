@@ -1,0 +1,104 @@
+{% extends "barbers/base.html" %}
+{% load static %}
+
+<!-- Title -->
+
+{% block title %} weBarbershop {% endblock %}
+
+<!-- JavaScript -->
+{% block js %} <script src="{% static 'js/appointment.js' %}"></script> {% endblock %}
+{% block content %}
+<!-- Body -->
+
+<!-- Form -->
+<div class="container">
+  {% include 'users/messages.html'%}
+  <div class="row">
+    <div class="col-md-10 offset-md-1">
+      <span class="anchor" id="formComplex"></span>
+      <div id="appointmetForm">
+          <h1 >Appointment Form</h1>
+          <p>Make an appointment with us today!!!</p>
+        </div>
+      <hr class="my-5">
+
+      <form method="post">{% csrf_token %}
+
+        <div class="form-row mt-4">
+          <div class="col-sm-6 pb-3">
+            <label for="firstname">First Name</label>
+            <input type="text" class="form-control" name="fname" id="fname" required="true">
+          </div>
+          <div class="col-sm-6 pb-3">
+            <label for="lastname">Last Name</label>
+            <input type="text" class="form-control" name="lname" id="lname" required="true">
+          </div>
+          <div class="col-sm-4 pb-3">
+            <label for="phone">Phone</label>
+            <input type="text" class="form-control" name="phone" id="phone" required="true">
+          </div>
+          <div class="col-sm-6 pb-3">
+            <label for="email">Email</label>
+            <input type="text" class="form-control" name="email" id="email">
+          </div>
+          <div class="col-sm-2 pb-3">
+            <label for="preferedContact">Prefered Contact</label>
+            <div class="form-group small">
+              <div class="form-check form-check-inline">
+                <label class="form-check-label">
+                  <input class="form-check-input" type="radio" name="contact" checked="checked" id="preferedContact" value="phone"> Phone
+                </label>
+              </div>
+              <div class="form-check form-check-inline">
+                <label class="form-check-label">
+                  <input class="form-check-input" type="radio" name="contact"  value="phone"> Email
+                </label>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-sm-3 pb-3">
+            <label for="barber">Prefered Barber</label>
+            <select class="form-control" id="barber" name="barber">
+              <option value="Kadihm M">peter </option>
+              <option value="Azad Z" selected="selected">chris</option>
+              <option value="George S">Novy</option>
+            </select>
+          </div>
+          <div class="col-sm-3 pb-3">
+            <label for="myDate">Date</label>
+            <input required="true" type="text" class="form-control" name="myDate" id="myDate" placeholder="YYYY-MM-DD">
+          </div>
+          <div class="col-sm-3 pb-3">
+            <label for="time">Time</label>
+            <select class="form-control" id="time" name="time">
+              <option >7am-8am</option>
+              <option value="8am-9am">8am-9am</option>
+              <option value="9am-10am">9am-10am</option>
+              <option value="11am-12pm">11am-12pm</option>
+              <option value="12pm-1pm">12pm-1pm</option>
+              <option value="2pm-3pm">2pm-3pm</option>
+              <option value="3pm-4pm">3pm-4pm</option>
+              <option selected="selected" value="4pm-5pm">4pm-5pm</option>
+              <option value="5pm-6pm">5pm-6pm</option>
+              <option value="6pm-7pm">6pm-7pm</option>
+              <option value="7pm-8pm">7pm-8pm</option>
+            </select>
+          </div>
+          <div class="col-md-6 pb-3">
+            <label for="exampleMessage">Comments</label>
+            <textarea class="form-control" id="comment" name="comment"></textarea>
+            <small class="text-info">
+              Let us know of any special detail needed.
+            </small>
+          </div>
+          <div class="col-md-6 pb-3 pt-5">
+            <button type="submit" name="submit" class="btn btn-info btn-lg btn-block" id="submit-form">Submit</button>
+          </div>
+        </div>
+      </form>
+
+    </div>
+  </div>
+</div>
+{% endblock %}

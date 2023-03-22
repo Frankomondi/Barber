@@ -1,0 +1,121 @@
+{% load static %}
+
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"> 
+  <title> webarbershop Booking System</title>
+  
+  <link rel="icon" href="{{ MEDIA_URL }}img/logo.png">
+
+  <!-- Bootstrap CSS -->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+
+  <!-- JavaScript, Custom CSS, Icon -->
+  {% block js %}
+  <link rel="stylesheet" href="{% static 'css/main-css.css' %}" type="text/css" />
+  <!--===============================================================================================-->  
+  <link rel="icon" type="image/png" href="{% static 'img/icons/favicon.ico' %}"/>
+ <!--===============================================================================================-->
+  <link rel="stylesheet" type="text/css" href="{% static 'vendor/bootstrap/css/bootstrap.min.css' %}">
+ <!--===============================================================================================-->
+  <link rel="stylesheet" type="text/css" href="{% static 'fonts/font-awesome-4.7.0/css/font-awesome.min.css' %}">
+ <!--===============================================================================================-->
+  <link rel="stylesheet" type="text/css" href="{% static 'fonts/iconic/css/material-design-iconic-font.min.css' %}">
+ <!--===============================================================================================-->
+  <link rel="stylesheet" type="text/css" href="{% static 'vendor/animate/animate.css' %}">
+ <!--===============================================================================================-->  
+  <link rel="stylesheet" type="text/css" href="{% static 'vendor/css-hamburgers/hamburgers.min.css'%}">
+ <!--===============================================================================================-->
+  <link rel="stylesheet" type="text/css" href="{% static 'vendor/animsition/css/animsition.min.css' %}">
+ <!--===============================================================================================-->
+  <link rel="stylesheet" type="text/css" href="{% static 'vendor/select2/select2.min.css' %}">
+ <!--===============================================================================================-->  
+  <link rel="stylesheet" type="text/css" href="{% static 'vendor/daterangepicker/daterangepicker.css' %}">
+ <!--===============================================================================================-->
+  <link rel="stylesheet" type="text/css" href="{% static 'css/util.cs' %}s">
+  <link rel="stylesheet" type="text/css" href="{% static 'css/main.css' %}">
+ <!--===============================================================================================--> <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+ <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+ <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+ <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+
+ <!--===============================================================================================-->
+  <script src="{% static 'vendor/jquery/jquery-3.2.1.min.js' %}"></script>
+<!--===============================================================================================-->
+  <script src="{% static 'vendor/animsition/js/animsition.min.js' %}"></script>
+<!--===============================================================================================-->
+  <script src="{% static 'vendor/bootstrap/js/popper.js' %}"></script>
+  <script src="{% static 'vendor/bootstrap/js/bootstrap.min.js' %}"></script>
+<!--===============================================================================================-->
+  <script src="{% static 'vendor/select2/select2.min.js' %}"></script>
+<!--===============================================================================================-->
+  <script src="{% static 'vendor/daterangepicker/moment.min.js' %}"></script>
+  <script src="{% static 'vendor/daterangepicker/daterangepicker.js' %}"></script>
+<!--===============================================================================================-->
+  <script src="{% static 'vendor/countdowntime/countdowntime.js' %}"></script>
+<!--===============================================================================================-->
+  <script src="{% static 'js/main.js' %}"></script>
+  {% endblock %}
+  <!-- nav -->
+  <nav class >{% block navigation %}
+
+    
+    
+      <nav class="navbar navbar-expand-lg navbar-dark bg-success border" >
+      <a class="navbar-brand" href="/"><span>WeBarbershop</span></a>
+      <div class="collapse navbar-collapse" id="navbarTogglerDemo03">
+         <ul class="navbar-nav ml-auto mt-2 mt-lg-0">
+                   <li type="button" data-toggle="collapse" data-target="#navbarHeader" aria-controls="navbarHeader" aria-expanded="false" aria-label="Toggle navigation">
+                   <a class="nav-link" href="{% url 'dashboard' %}">Dashboard</a>
+                   </li>
+                   <li class="nav-link text-light" id="welcome">welcome</li>
+                   <li class="nav-item" id="team"><a href="{% url 'team' %}" class="nav-link">Team</a></li>
+                   <li class="nav-item" id="our-services"><a href="{% url 'services' %}" class="nav-link">Our Services</a></li>
+                   <li class="nav-item" id="home-page"><a href= "{% url 'index' %}" class="nav-link">Home</a></li>
+                   <li class="nav-item" id="home-page"><a href= "{% url 'logout' %}"class="nav-link">logout</a></li>
+                   <li class="nav-item" id="home-page"><a href= "{% url 'login' %}"class="nav-link">login/signup</a></li>
+                   
+               </ul>
+           </div>
+       </nav> 
+    
+    
+    {% endblock navigation %}
+ </nav>
+
+</head>
+
+  <body >
+ <!-- Body -->
+ {% block content %}
+
+
+
+ {% endblock  %}
+
+</body>
+
+<footer class="footer" bg-sucess;margin-top: 58px;>
+ 
+  <div class="container-fluid" >
+    <div class="row">
+      <div class="col-sm-6">
+            <p>WeBarbershop</p>
+            <p>Ruiru kiambu</p>
+            <p>Kenya</p>
+          <p>Phone: (254)731-7931</p>
+          </div>
+
+  <div class="col-sm-6">
+    <p class="footer-company-name">© 2020 DavZyn Invextments.</p>
+  </div>
+
+</div>
+</div>
+</footer>
+
+</html>
